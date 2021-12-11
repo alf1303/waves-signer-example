@@ -1,8 +1,8 @@
 import Waves from "@waves/signer";
 import Provider from "@waves.exchange/provider-web";
 
-const waves = new Waves({NODE_URL: 'https://nodes-testnet.wavesnodes.com'});
-const provider = new Provider('https://testnet.waves.exchange/signer/');
+const waves = new Waves({NODE_URL: 'https://nodes.wavesnodes.com'});
+const provider = new Provider('https://waves.exchange/signer/');
 
 waves.setProvider(provider);
 
@@ -14,7 +14,7 @@ document.querySelector(".js-login").addEventListener("click", async function (ev
         event.target.innerHTML = `
             authorized as <br>
             ${userData.address}`;
-        document.querySelector(".explorer-link").innerHTML = `<a href="https://wavesexplorer.com/testnet/address/${userData.address}" target="_blank">Check the Explorer</a>`;
+        document.querySelector(".explorer-link").innerHTML = `<a href="https://wavesexplorer.com/address/${userData.address}" target="_blank">Check the Explorer</a>`;
     } catch (e) {
         console.error('login rejected')
     }
